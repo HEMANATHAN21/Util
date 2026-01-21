@@ -1,0 +1,66 @@
+Setup and Confoguration
+
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git config --list
+
+
+git init                # Initialize a new Git repository
+git clone <repo_url>    # Clone a repository
+git clone --branch <branch_name> --single-branch <repo_url>  # Clone specific branch
+git clone --branch dev_india --single-branch http://10.12.100.206:12580/tdc/srm/tdc-srm-vue.git
+git clone --branch dev_india --single-branch http://10.12.100.206:12580/tdc/srm/tdc-srm-java.git
+git clone --branch develop --single-branch http://10.12.100.206:12580/tdc/fusion/fusion-admin-java.git
+
+git clone --branch develop_india --single-branch http://10.12.100.206:12580/tdc/srm/tdc-srm-fusion-java.git
+
+git clone --branch develop_india --single-branch http://10.12.100.206:12580/tdc/srm/tdc-srm-fusion-vue.git
+
+git clone --branch develop_in --single-branch http://10.12.100.206:12580/tdc/fusion/fusion-admin-vue.git
+
+git clone --branch develop --single-branch http://10.12.100.206:12580/shaolang.cai/oa-ekp-java.git
+
+
+git status              # Show status of working directory
+git add <file>          # Stage a file
+git add .               # Stage all changes
+git commit -m "message" # Commit staged changes
+git commit --amend      # Modify last commit
+
+
+git branch                      # List branches
+git branch <branch_name>        # Create new branch
+git checkout <branch_name>      # Switch to branch
+git checkout -b <branch_name>   # Create and switch to new branch
+git merge <branch_name>         # Merge branch into current
+git rebase <branch_name>        # Rebase current branch onto another
+
+
+git remote -v                   # Show remotes
+git remote add origin <url>     # Add remote
+git push origin <branch_name>   # Push branch to remote
+git pull origin <branch_name>   # Pull changes from remote
+git fetch                       # Fetch changes without merging
+
+
+git log                         # Show commit history
+git log --oneline              # Compact view
+git show <commit_hash>         # Show details of a commit
+
+
+git reset <file>               # Unstage a file
+git reset --hard               # Reset working directory to last commit
+git revert <commit_hash>       # Create a new commit that undoes changes
+
+
+git tag                        # List tags
+git tag <tag_name>            # Create tag
+git push origin <tag_name>    # Push tag to remote
+
+
+git stash                      # Temporarily save changes
+git stash pop                  # Apply stashed changes
+git cherry-pick <commit_hash>  # Apply specific commit
+
+
+QZ000077
