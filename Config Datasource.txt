@@ -66,6 +66,8 @@ public class PrimaryDbConfig {
             JpaProperties jpaProperties) {
 
         Map<String, Object> properties = new HashMap<>(jpaProperties.getProperties());
+        properties.put("hibernate.physical_naming_strategy","org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy");
+        properties.put("hibernate.implicit_naming_strategy","org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy");
 
         return builder
                 .dataSource(dataSource)
@@ -133,6 +135,8 @@ public class MariaDbConfig {
         Map<String, Object> properties = new HashMap<>();
         properties.put("hibernate.hbm2ddl.auto", "none"); // No table creation
         properties.put("hibernate.dialect", "org.hibernate.dialect.MariaDBDialect");
+        properties.put("hibernate.physical_naming_strategy","org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy");
+        properties.put("hibernate.implicit_naming_strategy","org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy");
 
         return builder
                 .dataSource(dataSource)
@@ -150,3 +154,4 @@ public class MariaDbConfig {
         return new JpaTransactionManager(entityManagerFactory);
     }
 }
+
